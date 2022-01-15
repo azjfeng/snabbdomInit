@@ -1,0 +1,69 @@
+{
+  "name": "azjfeng-boke",
+  "version": "1.0.0",
+  "description": "boke",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --config webpack.config.js",
+    "serve": "webpack serve",
+    "tsc": "tsc",
+    "tailwind": "npm run build:style && npm run start",
+    "build:style": "cross-env TAILWIND_MODE=watch tailwind build src/styles/index.css -o src/styles/tailwind.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azjfeng/reactMusic.git"
+  },
+  "author": "azjfeng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azjfeng/reactMusic/issues"
+  },
+  "homepage": "https://github.com/azjfeng/reactMusic#readme",
+  "dependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-react": "^7.13.13",
+    "awesome-typescript-loader": "^5.2.1",
+    "axios": "^0.21.1",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^9.0.1",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.6",
+    "file-loader": "^6.2.0",
+    "koa": "^2.13.1",
+    "koa-body": "^4.2.0",
+    "koa-router": "^10.0.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^7.0.1",
+    "less": "^4.1.1",
+    "less-loader": "^9.0.0",
+    "mysql": "^2.18.1",
+    "postcss-loader": "^6.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.1.0",
+    "request": "^2.88.2",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^9.2.6",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.14.5",
+    "@types/jquery": "^3.5.11",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.8",
+    "autoprefixer": "^10.4.0",
+    "html-webpack-plugin": "^5.3.1",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
+    "tailwindcss": "^3.0.7",
+    "typescript": "^4.3.4",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
