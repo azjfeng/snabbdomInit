@@ -1,7 +1,7 @@
 import { htmlDomApi, DOMAPI } from "./htmldomapi";
 import { vnode, VNode } from "./vnode";
 
-function toVNode(node: Node, domApi?: DOMAPI): VNode {
+export function toVNode(node: Node, domApi?: DOMAPI): VNode {
     const api: DOMAPI = domApi !== undefined ? domApi : htmlDomApi;
     let text: string;
     if (api.isElement(node)) {                            //判断是否元素节点
@@ -36,6 +36,8 @@ function toVNode(node: Node, domApi?: DOMAPI): VNode {
     }
 }
 
-const node: any = document.getElementById("root")
-const data = toVNode(node)
-console.log(data)
+window.addEventListener("DOMContentLoaded", () => {
+    const node = document.getElementById("root");
+    const data = toVNode(node)
+    console.log(data)
+});

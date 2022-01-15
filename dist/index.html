@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>jameinfeng is boke</title><link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"><style>body{
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>jameinfeng is boke</title><link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"><style>body {
             background-color: #E9EAED;
             -webkit-user-select: auto !important;
         }</style><script defer="defer" src="index.js"></script></head><body><script>// (function(win){
@@ -8,9 +8,28 @@
         //     const resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize';
         //     const recalc = function(){
         //         const screenWidth = win.innerWidth || win.screen.width || 375;
-        //         html.style.fontSize = 100 * screenWidth / baseWidth + 'px' 
+        //         html.style.fontSize = 100 * screenWidth / baseWidth + 'px'
         //     }
         //     if(!doc.addEventListener) return ;
         //     win.addEventListener(resizeEvt, recalc, false);
         //     doc.addEventListener('DOMContentLoaded', recalc, false);
-        // })(window)</script><div id="root"><div class="content"><p onclick="alert('111')">aaaa</p></div></div><script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script><script src="https://cdn.jsdelivr.net/npm/wangeditor@latest/dist/wangEditor.min.js"></script><script src="https://www.azjfeng.com/static/jquery.js"></script></body></html>
+        // })(window)</script><div id="root"><div class="content"><div class="add" onclick="addNode()" style="color: green">aaaa</div></div></div><script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script><script src="https://cdn.jsdelivr.net/npm/wangeditor@latest/dist/wangEditor.min.js"></script><script src="https://www.azjfeng.com/static/jquery.js"></script><script>var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;//浏览器兼容
+        var config = { attributes: true, childList: true }//配置对象
+        $("#root").each(function () {
+            var _this = $(this);
+            var observer = new MutationObserver(function (mutations) {//构造函数回调
+                mutations.forEach(function (record) {
+                    if (record.type == "attributes") {//监听属性
+                        console.log("html的属性发生了变化")
+                    }
+                    if (record.type == 'childList') {//监听结构发生变化
+                        console.log("html的结构发生了变化")
+                    }
+                });
+            });
+            observer.observe(_this[0], config);
+        });
+
+        function addNode(){
+            $("#root").append("<p></p>")
+        }</script></body></html>
